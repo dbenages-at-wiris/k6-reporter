@@ -8,10 +8,10 @@ The report will show all request groups, checks, HTTP metrics and other statisti
 
 Any HTTP metrics which have failed thresholds will be highlighted in red. Any group checks with more than 0 failures will also be shown in red.
 
-![](https://img.shields.io/github/license/benc-uk/k6-reporter)
-![](https://img.shields.io/github/last-commit/benc-uk/k6-reporter)
-![](https://img.shields.io/github/release/benc-uk/k6-reporter)
-![](https://img.shields.io/github/checks-status/benc-uk/k6-reporter/main)
+![](https://img.shields.io/github/license/dbenages-at-wiris/k6-reporter)
+![](https://img.shields.io/github/last-commit/dbenages-at-wiris/k6-reporter)
+![](https://img.shields.io/github/release/dbenages-at-wiris/k6-reporter)
+![](https://img.shields.io/github/checks-status/dbenages-at-wiris/k6-reporter/main)
 
 # Usage
 
