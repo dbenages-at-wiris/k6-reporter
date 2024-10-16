@@ -1,17 +1,12 @@
 # K6 HTML Report Exporter v2
 
-### 🔥 Note.
 
-> This a complete rewrite/overhaul of the existing report converter, now written in JavaScript to be integrated into the test. This is a more elegant method than the offline conversation process. The previous code has been moved to the 'archive' folder.
+The report will show all request groups, checks, counters, HTTP metrics and other statistics
 
-The report will show all request groups, checks, HTTP metrics and other statistics
-
-Any HTTP metrics which have failed thresholds will be highlighted in red. Any group checks with more than 0 failures will also be shown in red.
+Any HTTP metrics which have failed thresholds will be highlighted in red. Any group checks with more than 0 failures will also be shown in red. Tooltip is integrated for the Request Metrics table with the specified threshold.
 
 ![](https://img.shields.io/github/license/dbenages-at-wiris/k6-reporter)
 ![](https://img.shields.io/github/last-commit/dbenages-at-wiris/k6-reporter)
-![](https://img.shields.io/github/release/dbenages-at-wiris/k6-reporter)
-![](https://img.shields.io/github/checks-status/dbenages-at-wiris/k6-reporter/main)
 
 # Usage
 
@@ -25,7 +20,7 @@ Import the `htmlReport` function from the bundled module hosted remotely on GitH
 import { htmlReport } from "https://raw.githubusercontent.com/dbenages-at-wiris/k6-reporter/main/dist/bundle.js";
 ```
 
-> Note. Replace `main` with a version tag (e.g. `2.2.0`) to use a specific version
+> Note. Replace `main` with any branch name to test for new developments.
 
 Then outside the test's default function, wrap it with the `handleSummary(data)` function which [K6 calls at the end of any test](https://github.com/loadimpact/k6/pull/1768), as follows:
 
@@ -38,7 +33,6 @@ export function handleSummary(data) {
 ```
 
 The key used in the returned object is the filename that will be written to, and can be any valid filename or path  
-**Note. This is a change in the v2.1.1 release**
 
 The **htmlReport** function accepts an optional options map as a second parameter, with the following properties
 
