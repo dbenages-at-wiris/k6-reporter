@@ -4,21 +4,16 @@
   "description": "Export K6 test summary as a HTML report",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/benc-uk/k6-reporter.git"
+    "url": "git+https://github.com/dbenages-at-wiris/k6-reporter.git"
   },
   "keywords": [
     "k6",
     "load-testing",
     "reporting"
   ],
-  "scripts": {
-    "build": "webpack",
-    "lint": "eslint src && prettier --check src",
-    "lint-fix": "eslint src --fix && prettier --write src"
-  },
   "author": "Ben Coleman",
   "license": "MIT",
-  "homepage": "https://github.com/benc-uk/k6-reporter",
+  "homepage": "https://github.com/dbenages-at-wiris/k6-reporter",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "eslint": "^7.22.0",
