@@ -11,6 +11,11 @@
     "load-testing",
     "reporting"
   ],
+  "scripts": {
+    "build": "webpack",
+    "lint": "eslint src && prettier --check src",
+    "lint-fix": "eslint src --fix && prettier --write src"
+  },
   "author": "Ben Coleman",
   "license": "MIT",
   "homepage": "https://github.com/dbenages-at-wiris/k6-reporter",
@@ -18,7 +23,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "eslint": "^7.22.0",
     "prettier": "^2.2.1",
-    "webpack": "^5.11.0",
+    "webpack": "^5.96.1",
     "webpack-cli": "^4.3.0"
   },
   "dependencies": {

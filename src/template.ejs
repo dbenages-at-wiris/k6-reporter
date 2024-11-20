@@ -310,58 +310,7 @@
           Object.keys(data.metrics).sort().forEach(function(k) {
             sortedMetrics[k] = data.metrics[k]
           });
-          for(metricName in sortedMetrics) {
-            if(standardMetrics.includes(metricName) || otherMetrics.includes(metricName) || !metricName.includes("counter")) { continue }
-            var counter = sortedMetrics[metricName] 
         %>
-        <% if(first) { first = false %> <h2>Status Counters</h2>
-        <table class="pure-table pure-table-horizontal" style="width: 100%">
-          <thead>
-            <tr>
-              <th>Counter Name</th>
-              <th>Count</th>
-              <th>Rate</th>
-            </tr>
-          </thead>
-          <% } %>
-          <tr>
-            <td width="50%"><%= metricName.replaceAll("_", " ").replace("counter", "") %></td>
-
-            <% if(counter.values.count) { %>
-            <td class="<%= checkFailed(counter, 'count') %>"><%= counter.values.count %></td>
-            <% } else { %>
-            <td>-</td>
-            <% } %>
-
-            <% if(counter.values.rate) { %>
-            <td class="<%= checkFailed(counter, 'rate') %>"><%= (counter.values.count/data.metrics.http_reqs.values.count*100).toFixed(2) + "%" %></td>
-            <% } else { %>
-            <td>-</td>
-            <% } %>
-          </tr>
-          <% } %>
-        </table>
-        <br>
-        <% for(group of data.root_group.groups) { %>
-        <h2> Group - <%= group.name %></h2>
-        <table class="pure-table pure-table-horizontal" style="width: 100%">
-          <thead>
-            <tr>
-              <th>Check Name</th>
-              <th>Passes</th>
-              <th>Failures</th>
-            </tr>
-          </thead>
-          <% for(check of group.checks) { %>
-          <tr class="checkDetails <% if(check.fails > 0) { %>failed<% } %>">
-            <td width="50%"><%= check.name %></td>
-            <td><%= check.passes %></td>
-            <td><%= check.fails %></td>
-          </tr>
-          <% } %>
-        </table>
-        <br>
-        <% } %>
 
         <% 
         let counterList = {};
